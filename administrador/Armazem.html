@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazem Central</title>
+    <link rel="stylesheet" href="../css/estoquearmazencentral.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-lateral">
+            <h2>Estoque Armazem Central</h2>
+            <ul>
+                <li><a href="#" id="adicionar-medicamentos">Adicionar Medicamentos</a></li>
+                <li><a href="#">Ver Prescrição Médica</a></li>
+                <li><a href="#">Notificações</a></li>
+            </ul>
+        </div>
+        <div class="conteudo-central">
+            <h1>Estoque do Armazém Central</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome Medicamento</th>
+                        <th>Código Medicamento</th>
+                        <th>Quantidade</th>
+                        <th>Data de Entrada</th>
+                        <th>Data de Validade</th>
+                        <th>Editar</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-medicamentos">
+                    <!-- As linhas da tabela serão adicionadas aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+        <div class="formulario" id="formulario-adicionar">
+            <h2>Adicionar Medicamento</h2>
+            <form>
+                <div class="campo">
+                    <label for="nome">Nome Medicamento:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="codigo">Código:</label>
+                    <input type="text" id="codigo" name="codigo" required>
+                </div>
+                <div class="campo">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade" required>
+                </div>
+                <div class="campo">
+                    <label for="data_entrada">Data de Entrada:</label>
+                    <input type="date" id="data_entrada" name="data_entrada" required>
+                </div>
+                <div class="campo">
+                    <label for="data_validade">Data de Validade:</label>
+                    <input type="date" id="data_validade" name="data_validade" required>
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="formAdicionarMedicamentos.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #add8e6; /* Azul claro */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.menu-lateral {
+    background-color: #030d18; /* Azul escuro */
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.menu-lateral h2 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-lateral ul li {
+    margin-bottom: 10px;
+}
+
+.menu-lateral ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+.conteudo-central {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007bff; /* Azul escuro */
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cinza claro para linhas pares */
+}
+
+.formulario {
+    display: none; /* Ocultar o formulário por padrão */
+    background-color: #add8e6; /* Azul claro */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    color: #007bff; /* Azul escuro */
+}
+
+.campo input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #007bff; /* Azul escuro */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul escuro */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+

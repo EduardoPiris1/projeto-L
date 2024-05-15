@@ -1,0 +1,61 @@
+-Colocar conta no local certo e outras propriedade.
+<?php
+// Verifica se o formulário de login foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Conecta ao banco de dados MySQL
+    $conn = new mysqli("localhost", "usuario_db", "senha_db", "nome_db");
+
+    // Verifica se a conexão foi bem-sucedida
+    if ($conn->connect_error) {
+        die("Erro de conexão: " . $conn->connect_error);
+    }
+
+    // Obtém os dados do formulário de login
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Consulta o banco de dados para verificar as credenciais do usuário
+    $sql = "SELECT u.id, u.nome, p.permissao FROM usuarios u JOIN permissoes p ON u.id = p.user_id WHERE u.username='$username' AND u.password='$password'";
+    $result = $conn->query($sql);
+
+    // Verifica se o usuário foi encontrado no banco de dados
+    if ($result->num_rows > 0) {
+        // Obtém informações sobre o usuário e suas permissões
+        $row = $result->fetch_assoc();
+        $user_id = $row["id"];
+        $user_nome = $row["nome"];
+        $user_permissao = $row["permissao"];
+
+        // Redireciona com base nas permissões do usuário
+        if ($user_permissao == "admin") {
+            header("Location: admin_dashboard.php?id=$user_id&nome=$user_nome");
+            exit;
+        } else {
+            header("Location: user_dashboard.php?id=$user_id&nome=$user_nome");
+            exit;
+        }
+    } else {
+        echo "Credenciais inválidas. Por favor, tente novamente.";
+    }
+
+    // Fecha a conexão com o banco de dados
+    $conn->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
